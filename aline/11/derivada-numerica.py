@@ -6,5 +6,5 @@ def derivada_numerica(funcao_str, x, h):
         derivada = (funcao(x + h) - funcao(x - h)) / (2 * h)
         return derivada
     except Exception as e:
-        messagebox.showerror("Erro", f"Erro ao avaliar a função: {e}")
-        return None
+       "messagebox".showerror("Erro", f"Erro ao avaliar a função: {e}")
+    return None
