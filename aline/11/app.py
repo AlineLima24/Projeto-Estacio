@@ -1,142 +1,101 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-import numpy as np
-import math
-
-# Funções matemáticas
-def soma(a, b):
-    return a + b
-
-def subtracao(a, b):
-    return a - b
-
-def multiplicacao(a, b):
-    return a * b
-
-def divisao(a, b):
-    if b == 0:
-        return "Erro: Divisão por zero"
-    else:
-        return a / b
-
-def potencia(a, b):
-    return a ** b
-
-def raiz_quadrada(a):
-    if a < 0:
-        return "Erro: Raiz quadrada de número negativo"
-    else:
-        return math.sqrt(a)
-
-# Funções de memória
-memoria = None
-
-def adicionar_memoria(valor):
-    global memoria
-    memoria = valor
-
-def limpar_memoria():
-    global memoria
-    memoria = None
-
-def consultar_memoria():
-    return memoria
+import os
 
 # Interface gráfica principal
 app = tk.Tk()
 app.title("Calculadora Avançada")
 
-# Funções básicas
-frame_basico = ttk.LabelFrame(app, text="Funcionalidades Básicas")
-frame_basico.grid(row=0, column=0, padx=10, pady=5)
+# Funções para abrir os arquivos correspondentes
+def open_calculos_estruturais():
+    os.system("caminho_para_o_arquivo_calculos_estruturais.py")
 
-btn_soma = ttk.Button(frame_basico, text="Soma")
-btn_soma.grid(row=0, column=0, padx=5, pady=5)
+def open_derivadas_numericas():
+    os.system("caminho_para_o_arquivo_derivadas_numericas.py")
 
-btn_subtracao = ttk.Button(frame_basico, text="Subtração")
-btn_subtracao.grid(row=0, column=1, padx=5, pady=5)
+def open_divisao_interface():
+    os.system("caminho_para_o_arquivo_divisao_interface.py")
 
-btn_multiplicacao = ttk.Button(frame_basico, text="Multiplicação")
-btn_multiplicacao.grid(row=1, column=0, padx=5, pady=5)
+def open_funcionalidades_basicas():
+    os.system("caminho_para_o_arquivo_funcionalidades_basicas.py")
 
-btn_divisao = ttk.Button(frame_basico, text="Divisão")
-btn_divisao.grid(row=1, column=1, padx=5, pady=5)
+def open_funcionalidades_memoria():
+    os.system("caminho_para_o_arquivo_funcionalidades_memoria.py")
 
-# Funções avançadas
-frame_avancado = ttk.LabelFrame(app, text="Funcionalidades Avançadas")
-frame_avancado.grid(row=1, column=0, padx=10, pady=5)
+def open_funcoes_avancadas():
+    os.system("caminho_para_o_arquivo_funcoes_avancadas.py")
 
-btn_potencia = ttk.Button(frame_avancado, text="Potência")
-btn_potencia.grid(row=0, column=0, padx=5, pady=5)
+def open_funcoes_engenharia_civil():
+    os.system("caminho_para_o_arquivo_funcoes_engenharia_civil.py")
 
-btn_raiz_quadrada = ttk.Button(frame_avancado, text="Raiz Quadrada")
-btn_raiz_quadrada.grid(row=0, column=1, padx=5, pady=5)
+def open_funcoes_matematicas():
+    os.system("caminho_para_o_arquivo_funcoes_matematicas.py")
 
-# Funções de memória
-frame_memoria = ttk.LabelFrame(app, text="Funcionalidades de Memória")
-frame_memoria.grid(row=2, column=0, padx=10, pady=5)
+def open_hidraulica_e_saneamento():
+    os.system("caminho_para_o_arquivo_hidraulica_e_saneamento.py")
 
-btn_adicionar_memoria = ttk.Button(frame_memoria, text="Adicionar à Memória")
-btn_adicionar_memoria.grid(row=0, column=0, padx=5, pady=5)
+def open_integral_numerica():
+    os.system("caminho_para_o_arquivo_integral_numerica.py")
 
-btn_consultar_memoria = ttk.Button(frame_memoria, text="Consultar Memória")
-btn_consultar_memoria.grid(row=0, column=1, padx=5, pady=5)
+def open_mecanica_dos_solos():
+    os.system("caminho_para_o_arquivo_mecanica_dos_solos.py")
 
-btn_limpar_memoria = ttk.Button(frame_memoria, text="Limpar Memória")
-btn_limpar_memoria.grid(row=1, column=0, padx=5, pady=5)
+def open_operacoes_memoria():
+    os.system("caminho_para_o_arquivo_operacoes_memoria.py")
 
-# Funções de Engenharia Civil
-frame_engenharia = ttk.LabelFrame(app, text="Funcionalidades de Engenharia Civil")
-frame_engenharia.grid(row=0, column=1, rowspan=3, padx=10, pady=5)
+def open_potenciais_raizes():
+    os.system("caminho_para_o_arquivo_potenciais_raizes.py")
 
-btn_calculos_estruturais = ttk.Button(frame_engenharia, text="Cálculos Estruturais")
-btn_calculos_estruturais.grid(row=0, column=0, padx=5, pady=5)
+def open_topografia():
+    os.system("caminho_para_o_arquivo_topografia.py")
 
-btn_topografia = ttk.Button(frame_engenharia, text="Topografia")
-btn_topografia.grid(row=1, column=0, padx=5, pady=5)
+def open_transformada_fourier():
+    os.system("caminho_para_o_arquivo_transformada_fourier.py")
 
-# Funções para funções matemáticas
-frame_matematica = ttk.LabelFrame(app, text="Funcionalidades Matemáticas")
-frame_matematica.grid(row=3, column=0, padx=10, pady=5)
+# Botões para cada funcionalidade
+btn_calculos_estruturais = ttk.Button(app, text="Cálculos Estruturais", command=open_calculos_estruturais)
+btn_calculos_estruturais.pack()
 
-btn_transformada_fourier = ttk.Button(frame_matematica, text="Transformada de Fourier")
-btn_transformada_fourier.grid(row=0, column=0, padx=5, pady=5)
+btn_derivadas_numericas = ttk.Button(app, text="Derivadas Numéricas", command=open_derivadas_numericas)
+btn_derivadas_numericas.pack()
 
-btn_integral_numerica = ttk.Button(frame_matematica, text="Integração Numérica")
-btn_integral_numerica.grid(row=0, column=1, padx=5, pady=5)
+btn_divisao_interface = ttk.Button(app, text="Divisão Interface", command=open_divisao_interface)
+btn_divisao_interface.pack()
 
-btn_derivada_numerica = ttk.Button(frame_matematica, text="Derivada Numérica")
-btn_derivada_numerica.grid(row=1, column=0, padx=5, pady=5)
+btn_funcionalidades_basicas = ttk.Button(app, text="Funcionalidades Básicas", command=open_funcionalidades_basicas)
+btn_funcionalidades_basicas.pack()
 
-# Funções para hidráulica e saneamento
-frame_hidraulica = ttk.LabelFrame(app, text="Funcionalidades de Hidráulica e Saneamento")
-frame_hidraulica.grid(row=3, column=1, padx=10, pady=5)
+btn_funcionalidades_memoria = ttk.Button(app, text="Funcionalidades de Memória", command=open_funcionalidades_memoria)
+btn_funcionalidades_memoria.pack()
 
-btn_fluxo_tubulacao = ttk.Button(frame_hidraulica, text="Fluxo em Tubulação")
-btn_fluxo_tubulacao.grid(row=0, column=0, padx=5, pady=5)
+btn_funcoes_avancadas = ttk.Button(app, text="Funções Avançadas", command=open_funcoes_avancadas)
+btn_funcoes_avancadas.pack()
 
-btn_fluxo_canal = ttk.Button(frame_hidraulica, text="Fluxo em Canal")
-btn_fluxo_canal.grid(row=0, column=1, padx=5, pady=5)
+btn_funcoes_engenharia_civil = ttk.Button(app, text="Funções de Engenharia Civil", command=open_funcoes_engenharia_civil)
+btn_funcoes_engenharia_civil.pack()
 
-# Eventos de botões (ainda a serem implementados)
-def on_btn_click():
-    messagebox.showinfo("Aviso", "Esta funcionalidade ainda será implementada.")
+btn_funcoes_matematicas = ttk.Button(app, text="Funções Matemáticas", command=open_funcoes_matematicas)
+btn_funcoes_matematicas.pack()
 
-btn_soma.config(command=on_btn_click)
-btn_subtracao.config(command=on_btn_click)
-btn_multiplicacao.config(command=on_btn_click)
-btn_divisao.config(command=on_btn_click)
-btn_potencia.config(command=on_btn_click)
-btn_raiz_quadrada.config(command=on_btn_click)
-btn_adicionar_memoria.config(command=on_btn_click)
-btn_consultar_memoria.config(command=on_btn_click)
-btn_limpar_memoria.config(command=on_btn_click)
-btn_calculos_estruturais.config(command=on_btn_click)
-btn_topografia.config(command=on_btn_click)
-btn_transformada_fourier.config(command=on_btn_click)
-btn_integral_numerica.config(command=on_btn_click)
-btn_derivada_numerica.config(command=on_btn_click)
-btn_fluxo_tubulacao.config(command=on_btn_click)
-btn_fluxo_canal.config(command=on_btn_click)
+btn_hidraulica_e_saneamento = ttk.Button(app, text="Hidráulica e Saneamento", command=open_hidraulica_e_saneamento)
+btn_hidraulica_e_saneamento.pack()
+
+btn_integral_numerica = ttk.Button(app, text="Integração Numérica", command=open_integral_numerica)
+btn_integral_numerica.pack()
+
+btn_mecanica_dos_solos = ttk.Button(app, text="Mecânica dos Solos", command=open_mecanica_dos_solos)
+btn_mecanica_dos_solos.pack()
+
+btn_operacoes_memoria = ttk.Button(app, text="Operações de Memória", command=open_operacoes_memoria)
+btn_operacoes_memoria.pack()
+
+btn_potenciais_raizes = ttk.Button(app, text="Potenciais e Raízes", command=open_potenciais_raizes)
+btn_potenciais_raizes.pack()
+
+btn_topografia = ttk.Button(app, text="Topografia", command=open_topografia)
+btn_topografia.pack()
+
+btn_transformada_fourier = ttk.Button(app, text="Transformada de Fourier", command=open_transformada_fourier)
+btn_transformada_fourier.pack()
 
 app.mainloop()
